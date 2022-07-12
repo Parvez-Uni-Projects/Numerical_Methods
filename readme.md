@@ -4,7 +4,7 @@ This is  Lab course of  AUST CSE 2nd year 2nd semesester containing a 3 credit t
 
 <dl>
 
-  <dt>Finding roots of a non-linear equation using </dt>
+  ### Finding roots of a non-linear equation using 
   <dd>Is something people use sometimes.</dd>
   <dd> Bisection Method</dd>
   <dd> False Position Methodd</dd>
