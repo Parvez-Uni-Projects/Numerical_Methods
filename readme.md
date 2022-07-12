@@ -4,7 +4,7 @@ This is  Lab course of  AUST CSE 2nd year 2nd semesester containing a 3 credit t
 
 <dl>
 
-  ### Finding roots of a non-linear equation using 
+  ### 1.Finding roots of a non-linear equation using 
   <dd> -Bisection Method</dd>
   <dd> -False Position Methodd</dd>
   <dd> -Newton-Raphson Method</dd>
