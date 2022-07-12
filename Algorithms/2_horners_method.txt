@@ -1,0 +1,6 @@
+1. Set k = n
+2. Let bk = ak
+3. Let bk - 1 = ak - 1 + bkx0
+4. Set k = k - 1
+5. If k ≥ 0 then go to step 3
+Else End

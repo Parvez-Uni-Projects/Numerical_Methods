@@ -1,0 +1,177 @@
+
+Algorithm: Bisection Method
+
+
+1. Define function f(x)
+2. Input
+    a. Lower and Upper guesses x0 and x1
+    b. tolerable error e
+3. If f(x0)*f(x1) > 0
+    print "Incorrect initial guesses"
+    goto 3
+   End If
+4. Do
+    x2 = (x0+x1)/2
+    If f(x0)*f(x2) < 0
+        x1 = x2
+    Else
+        x0 = x2
+    End If
+  while abs(f(x2) > e
+6. Print root as x2
+7. Stop
+
+
+Algorithm: False Position Method
+
+
+1. Define function f(x)
+2. Input
+    a. Lower and Upper guesses x0 and x1
+    b. tolerable error e
+3. If f(x0)*f(x1) > 0
+    print "Incorrect initial guesses"
+    goto 3
+   End If
+4. Do
+    x2 = x0 - ((x0-x1) * f(x0))/(f(x0) - f(x1))
+    If f(x0)*f(x2) < 0
+        x1 = x2
+    Else
+        x0 = x2
+    End If
+   While abs(f(x2) > e
+5. Print root as x2
+6. Stop
+
+
+Algorithm: Newton Raphson Method
+
+
+1. Define Function f(x)
+2. Define Derivative of function f_der(x)
+3. Input:
+    a. Initial guess x0
+    b. Tolerable Error e
+4. do
+    if f_der(x) = 0.0 then
+        print: mathematical error
+        stop
+    end if
+    x1 = x0 - f(x0) / f_der(x0)
+    x0 = x1
+    f1= f(x1)
+   while (f1>e)
+5. Print: root
+6. Stop
+
+
+Algorithm: Secant Method
+
+
+1. Define Function f(x)
+2. Input:
+    a. Initial guess x0, x1
+    b. Tolerable Error e
+3. do
+    Evaluate f(x0) and f(x1)
+    x2 = [x0*f(x1) – x1*f(x0)] / [f(x1) – f(x0)]
+    x0 = x1 and x1 = x2
+  while ((x2 – x1)/x2) > e,
+5. Print the required root as x2.
+6. Stop
+
+
+
+Algorithm: Fixed Point Iterations
+1. Define function as f(x)
+2. Define convergent form g(x)
+3. Input:
+    a. Initial guess x0
+    b. Tolerable Error e
+    c. Maximum Iteration N
+4. Initialize iteration counter: step = 1
+5. Do
+    x1 = g(x0)
+    step = step + 1
+    If step > N
+        Print "Not Convergent"
+        Stop
+    End If
+    x0 = x1
+  While abs f(x1) > e
+6. Print root as x1
+7. Stop
+
+
+Algorithm of Multiple Root By Newtons
+
+Input: Initial guess x, increment size ds, coeffecients of functions an, an-1, ........a1, a0
+Output: Roots of f(x)
+
+
+   while(n>1) do
+    
+            do 
+                evaluate f(x) as f1 and derivative of f(x) as f2
+                x1 = x - (f1/f2); 
+                e = fabs(x1-x);
+                x = x1;
+                
+            while(e>0.0001);
+	    End of do
+
+            Find the coefficent of the defleted polynomial bn-1, bn-2 .....b1, b0
+            bn = 0
+            for(i=n-1 to 0)
+            	bn-1 = an + bn*x 
+
+            n = n-1;
+            
+
+    End of While
+
+
+All Possible Root By Bisection_Algorithm
+
+while(x2<b) do
+    
+        x1 = a;
+        x2 = x1 + ds;
+        
+        if (f(x1)*f(x2)>0) then
+        
+            print "Wrong Guess;
+            break;
+        End of if
+        else
+             do
+
+                    xr = (x1+x2)/2;
+                   
+                    if((f(x1)*f(xr))<0) then
+                    
+                        x2=xr;
+                    
+                    else
+                    
+                        x1=xr;
+                        
+                    
+                    err = fabs((x2-x1)/x2);
+
+                while(fabs((x2-x1)/x2)>=error);
+		End of do
+
+               print root xr
+          
+               if(x2>b)
+               {
+                   break;
+               }
+
+            End of else
+           
+        
+        a = x2;
+    End of while
