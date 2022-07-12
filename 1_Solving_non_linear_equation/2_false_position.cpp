@@ -14,7 +14,7 @@ int main()
 
     do
     {
-        // x = (a + b) / 2.0;
+
         x = a - ((f(a) * (b - a)) / (f(b) - f(a)));
         if (f(x) * f(a) < 0)
         {
