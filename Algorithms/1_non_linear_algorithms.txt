@@ -142,7 +142,6 @@ while(x2<b) do
         if (f(x1)*f(x2)>0) then
         
             print "Wrong Guess;
-            break;
         End of if
         else
              do
