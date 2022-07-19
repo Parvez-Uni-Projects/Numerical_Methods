@@ -30,9 +30,21 @@ double def_horner(vector<int> v, int x)
     {
         v[i] *= i;
     }
-    vector_print(v);
+    // vector_print(v);
     return horner(v, x);
 }
+
+// void deflat_equ(double x,double ar[])
+// {
+//     double b[n+1];
+//     int i;
+//     b[n]=0;
+//     for(i=n-1;i>=0;i--)
+//         b[i]=ar[i+1]+x*b[i+1];
+//     for(i=n-1;i>=0;i--)
+//         ar[i]=b[i];
+//     n--;
+// }
 void multiple_root_using_bisection(vector<int> v)
 {
 
@@ -86,7 +98,35 @@ void multiple_root_using_bisection(vector<int> v)
 
 void multiple_root_using_newton(vector<int> v)
 {
+
+    double x1 = 1.0, f, fd;
+    int i = 0;
+    double x = 7;
+    int n = 4;
+    double next = 1.0;
+
+    while (n > 1)
+    {
+             cout << next << endl;
+        do
+        {
+           
+            x1 = x - (horner(v, x) / def_horner(v, x));
+
+
+            next = x;
+            x= x1;
+
+        } while (fabs(horner(v, x1)) > 0.0000001);
+        // deflat_equ((x1+x)/2.0,ar);
+        cout << "The root is " << x1 << " " << next << endl;
+
+         x= (x1+ next) /2.0;
     
+        n--;
+    }
+
+    // printf("Root %d: %lf",++i,-(ar[0]/ar[1]));
 }
 int main()
 {
@@ -99,7 +139,25 @@ int main()
     cout << "\nfrom differentiation " << def_horner(v, 1) << endl;
 
     multiple_root_using_bisection(v);
+
+    cout << "\n\n Root using newton" << endl;
     multiple_root_using_newton(v);
 
     return 0;
 }
+
+// sirs code
+// while(n>1)
+//     {
+//         while(fabs((x1-x)/x1)>=0.00000000001)
+//         {
+//             x=x1;
+//             f=horner_equ(x,ar);
+//             fd=derive_equ(x,ar);
+//             x1=x-(f/fd);
+//         }
+//         deflat_equ((x1+x)/2.0,ar);
+//         printf("Root %d: %lf\n",++i,(x1+x)/2.0);
+//         x=(x1+x)/2.0;
+//     }
+//     printf("Root %d: %lf",++i,-(ar[0]/ar[1]));
