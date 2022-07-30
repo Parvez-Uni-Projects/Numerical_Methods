@@ -112,8 +112,6 @@ void multiple_root_using_newton(vector<int> v)
         {
            
             x1 = x - (horner(v, x) / def_horner(v, x));
-
-
             next = x;
             x= x1;
 
@@ -140,8 +138,8 @@ int main()
 
     multiple_root_using_bisection(v);
 
-    cout << "\n\n Root using newton" << endl;
-    multiple_root_using_newton(v);
+    // cout << "\n\n Root using newton" << endl;
+    // multiple_root_using_newton(v);
 
     return 0;
 }

@@ -44,14 +44,7 @@ void take_input()
     cout << endl;
 }
 
-int match_upto(double number, int match)
-{
-    int power_number = pow(10, match);
-    number *= power_number;
-    int upto_match = number;
-    upto_match %= power_number;
-    return upto_match;
-}
+
 
 int main()
 {
