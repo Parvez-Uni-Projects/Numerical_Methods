@@ -1,0 +1,71 @@
+Input: Initial guesses a and b, increment size ds, coeffecients of functions
+Output: Roots of f(x)
+    
+    while(x2<b) do
+    
+        x1 = a;
+        x2 = x1 + ds;
+        
+        if (f(x1)*f(x2)>0) then
+        
+            print "Wrong Guess;
+            break;
+        End of if
+        else
+             do
+
+                    xr = (x1+x2)/2;
+                   
+                    if((f(x1)*f(xr))<0) then
+                    
+                        x2=xr;
+                    
+                    else
+                    
+                        x1=xr;
+                        
+                    
+                    err = fabs((x2-x1)/x2);
+
+                while(fabs((x2-x1)/x2)>=error);
+		End of do
+
+               print root xr
+          
+               if(x2>b)
+               {
+                   break;
+               }
+
+            End of else
+           
+        
+        a = x2;
+    End of while
+
+
+
+Input: Initial guess x, increment size ds, coeffecients of functions an, an-1, ........a1, a0
+Output: Roots of f(x)
+
+
+   while(n>1) do
+    
+            do 
+                evaluate f(x) as f1 and derivative of f(x) as f2
+                x1 = x - (f1/f2); 
+                e = fabs(x1-x);
+                x = x1;
+                
+            while(e>0.0001);
+	    End of do
+
+            Find the coefficent of the defleted polynomial bn-1, bn-2 .....b1, b0
+            bn = 0
+            for(i=n-1 to 0)
+            	bn-1 = an + bn*x 
+
+            n = n-1;
+            
+
+    End of While

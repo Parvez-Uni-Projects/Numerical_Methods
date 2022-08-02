@@ -1,0 +1,259 @@
+Algorithm: Gauss Elimination with out pivoting:
+Input: Order of the matrix, Coefficients of matrix of size n
+Output: Solution Vector {x1, x2,....xn}
+1. Declare the variables and read the order of the matrix n.
+2. Take the coefficients of the linear equation as:
+	for k=1 to n //access the rows
+		for j=1 to n+1 //access the columns
+			Read a[k][j]
+		End for j
+	End for k
+
+3. Forward Elimination: 
+	for k=1 to n-1 //all the row accept last
+		for i=k+1 to n //all the row accept first row
+		  for j=k to n+1 //access the coloums
+			a[i][j] = a[i][j] – a[i][k] /a[k][k] * a[k][j]
+		  End for j
+		End for i
+	End for k
+
+4. Forward Substitution
+	Compute x[n] = a[n][n+1]/a[n][n]
+	for k=n-1 to 1 //all the row accept last row
+	sum = 0
+		for j=k+1 to n
+			sum = sum + a[k][j] * x[j] //multiply the coeficient with x[j] and sum up all together.
+		End for j
+	x[k] = 1/a[k][k] * (a[k][n+1] – sum)
+	End for k
+5. Print the soluion vector 
+    	For i = 1 to n
+		
+		Print Xi
+	
+
+6. Stop
+
+
+
+Algorithm: Gauss Jordan:
+Input: Order of the matrix, Coefficients of matrix of size n
+Output: Solution Vector {x1, x2,....xn}
+1. Declare the variables and read the order of the matrix n.
+2. Take the coefficients of the linear equation as:
+	for k=1 to n //access the rows
+		for j=1 to n+1 //access the columns
+			Read a[k][j]
+		End for j
+	End for k
+
+3. Apply Gauss Jordan Elimination on Matrix a:
+	For i = 1 to n
+	    If a[i][i] = 0
+	    Print "Mathematical Error!" and Stop
+	    End If
+	    For j = 1 to n
+		If i ≠ j 
+		   pivot = a[j][i]/a[i][i]
+		   For k = 1 to n+1
+		       a[j][k] = a[j][k] - pivot * a[i][k]
+		   End k
+		   End If
+	    End j
+	End i
+
+4. Obtaining Solution:
+	
+	For i = 1 to n 
+		x[i] = a[i][n+1]/a[i][i]
+	End i
+
+5. Display Solution:
+	
+	For i = 1 to n
+		
+		Print x[i]
+	
+	End i
+6. Stop
+
+
+Algorithm: Gauss Seidel Method:
+Input: Order of the matrix, Coefficients of matrix of size n and vector b
+Output: Solution Vector {x1, x2,....xn}
+1. Declare the variables and read the order of the matrix n.
+2. Take the coefficients of the linear equation as:
+	for k=1 to n //access the rows
+		for j=1 to n //access the columns
+			Read a[k][j]
+		End for j
+	End for k
+3. Take the vector b
+	for i=1 to n
+           Read b[i]
+
+4. Choose initial guess x(0) to the solution x
+	for i=0 to n-1
+            x(0)[i] = 0
+
+5. Apply Gauss Seidel Iterations:
+    do
+    {
+        temperror = 0;
+        for(i = 1; i <= limit; i++)
+        {
+            sum = 0;
+            for(j = 1; j <= limit; j++)
+            {
+                if(j != i)
+                {
+                    sum = sum + a[i][j] * x[j];
+                }
+            }
+            temp = (a[i][limit + 1] - sum) / a[i][i];
+            error = fabs(x[i] - temp);
+            if(error > temperror)
+            {
+                temperror = error;
+            }
+            x[i] = temp;
+            //printf("\nY[%d]=\t%f", count, y[count]);
+        }
+        // printf("\n");
+    }while(temperror >= allowed_error);
+
+6. Display Solution:
+	
+	For i = 1 to n
+		
+		Print x[i]
+	
+	End i
+7. Stop
+
+
+Algorithm: Jacobi Method:
+Input: Order of the matrix, Coefficients of matrix of size n and vector b
+Output: Solution Vector {x1, x2,....xn}
+1. Declare the variables and read the order of the matrix n.
+2. Take the coefficients of the linear equation as:
+	for k=1 to n //access the rows
+		for j=1 to n //access the columns
+			Read a[k][j]
+		End for j
+	End for k
+3. Take the vector b
+	for i=1 to n
+           Read b[i]
+
+4. Choose initial guess x(0) to the solution x
+	for i=1 to n
+            x(0) = b[i]/a[i][i] 
+
+5.  do
+    {
+        temperror = 0;
+        for(i = 1; i <= limit; i++)
+        {
+            sum = 0;
+            for(j = 1; j <= limit; j++)
+            {
+                if(j != i)
+                {
+                    sum = sum + a[i][j] * x[j];
+                }
+            }
+            temp[i] = (a[i][limit + 1] - sum) / a[i][i];
+            error = fabs(x[i] - temp[i]);
+            if(error > temperror)
+            {
+                temperror = error;
+            }
+            //x[i] = temp;
+
+        }
+        for(i=1;i<=limit;i++)
+        {
+            x[i] = temp[i];
+        }
+        //printf("%lf\n", temp);
+        //x[i] = temp;
+
+    }while(temperror >= allowed_error);
+
+
+6. Display Solution:
+	
+	For i = 1 to n
+		
+		Print x[i]
+	
+	End i
+7. Stop
+
+
+Algorithm: Solve the system of linear equations using inverse marix with gauss jordan
+input: number of equations n, augmented matrix a[n][2n], contant vector b[n]
+Output: Solution vector x[n]
+
+Code snippet to find the inverse matrix:
+    
+    for(k=1; k<=n; k++)
+    {
+        for(j=1; j<=2*n; j++)
+        {
+            printf("Co-efficient of a[%d][%d] = ", k,j);
+            cin>>a[k][j];
+        }
+    }
+    printf("Enter Constant vector\n");
+    for(i=1;i<=n;i++)
+    {
+        cin>>d[i];
+
+    }
+   
+    for(i=1; i<=3; i++)
+    {
+        if(a[i][i]==0.0)
+        {
+            cout<<"Mathematical Error!"<<endl;
+            return 0;
+        }
+        for(j=1; j<=n; j++)
+        {
+            if(i!=j)
+            {
+                pivot = a[j][i]/a[i][i];
+                for(k=1; k<=2*n; k++)
+                {
+                   
+                    a[j][k]=a[j][k]-pivot*a[i][k];
+                   
+
+                }
+            }
+        }
+    }
+
+    for(i=1; i<=n; i++)
+    {
+        for(j=n+1; j<=2*n; j++)
+        {
+            a[i][j] = a[i][j]/a[i][i];
+        }
+    }
+
+    for(k=1; k<=n; k++)
+    {
+        for(j=4; j<=2*n; j++)
+        {
+            cout<<a[k][j];
+           
+        }
+        cout << endl;
+    }
+    
+
+ //Now find the solution vector x using x = A-1*b   
