@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 double co_eff[100][100], res[100], factor;
+
+
 void take_input(int n)
 {
     for (int i = 1; i <= n; i++)

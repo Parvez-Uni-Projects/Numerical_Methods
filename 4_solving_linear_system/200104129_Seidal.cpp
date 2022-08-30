@@ -33,12 +33,17 @@ void seidal(int n)
             }
             temp = (co_eff[i][n + 1] - total) / co_eff[i][i];
             error = fabs(res[i] - temp);
+            cout << "Error _error  out if" << error << endl;
             if (error > temp_error)
             {
+                cout << "Error _error " << error << endl;
+                cout << "Temp _error " << temp_error << endl;
                 temp_error = error;
             }
             res[i] = temp;
         }
+
+        cout << error << endl;
     } while (temp_error >= permit_error);
 }
 void solution_print(int n)
