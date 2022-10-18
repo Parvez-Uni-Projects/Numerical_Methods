@@ -5,23 +5,21 @@ This is  Lab course of  AUST CSE 2nd year 2nd semesester containing a 3 credit t
 <dl>
 
   ### 1. Finding roots of a non-linear equation using 
-  <dd> -Bisection Method</dd>
-  <dd> -False Position Methodd</dd>
-  <dd> -Newton-Raphson Method</dd>
-  <dd> -Secant Method</dd>
-  <dd> -fixed point ieration</dd>
+  Serial | 1 | 2 | 3 | 4 | 5 
+--- | --- | --- | --- |--- |--- |
+Method | Bisection Method | False Position Method| Newton-Raphson Method| Secant Method| Fixed point ieration method| 
 
   ### 2. Evaluate Polynomial using Horner’s Rule 
 
   ### 3. Finding all possible roots of a non-linear equation using  
-  <dd> -Newton’s Method</dd>
-  <dd> -Modified Bisection Method</dd>
+  Serial | 1 | 2 |
+--- | --- | --- | 
+Method | Newton’s Methodd | Modified Bisection Method|
 
   ### 4. Finding root of a system of linear equations by  
-  <dd> -Gauss Elimination Method</dd>
-  <dd> -Gauss-Jordan Method</dd>
-  <dd> -Gauss-Seidel Method</dd>
-  <dd> -Jacobi Method </dd>
+   Serial | 1 | 2 | 3 | 4 |
+--- | --- | --- | --- | --- |
+Method | Gauss Elimination Method | Gauss-Seidel Method| Gauss-Jordan Method| Jacobi Method| 
 
   ###  5. Matrix Inversion Using Gauss Jordan Method  
   ###  6. Check the stability of System of Linear Equations  
